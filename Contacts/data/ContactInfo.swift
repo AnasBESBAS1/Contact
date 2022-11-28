@@ -1,6 +1,7 @@
 import Foundation
 
-struct Contact {
+struct Contact : Identifiable {
+    let id = UUID()
     var name: String
     var phoneNumber: String
 }

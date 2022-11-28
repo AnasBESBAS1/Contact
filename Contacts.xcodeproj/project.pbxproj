@@ -17,6 +17,7 @@
 		0A730A302934BA8E00EA7793 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A730A2F2934BA8E00EA7793 /* ContactInfo.swift */; };
 		0A730A332934BCA900EA7793 /* ContactRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A730A322934BCA900EA7793 /* ContactRepository.swift */; };
 		0A730A362934BD9D00EA7793 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A730A352934BD9D00EA7793 /* ContactView.swift */; };
+		0A730A382934C57E00EA7793 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A730A372934C57E00EA7793 /* ContactListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		0A730A2F2934BA8E00EA7793 /* ContactInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
 		0A730A322934BCA900EA7793 /* ContactRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRepository.swift; sourceTree = "<group>"; };
 		0A730A352934BD9D00EA7793 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		0A730A372934C57E00EA7793 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				0A730A352934BD9D00EA7793 /* ContactView.swift */,
+				0A730A372934C57E00EA7793 /* ContactListView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				0A730A302934BA8E00EA7793 /* ContactInfo.swift in Sources */,
 				0A730A072934B8EA00EA7793 /* ContentView.swift in Sources */,
 				0A730A332934BCA900EA7793 /* ContactRepository.swift in Sources */,
+				0A730A382934C57E00EA7793 /* ContactListView.swift in Sources */,
 				0A730A362934BD9D00EA7793 /* ContactView.swift in Sources */,
 				0A730A052934B8EA00EA7793 /* ContactsApp.swift in Sources */,
 			);

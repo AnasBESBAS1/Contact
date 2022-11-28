@@ -5,15 +5,21 @@ struct ContactView: View {
     
     let contact: Contact
     var body: some View {
-        HStack {
-            Image(systemName: "photo")
+        HStack(spacing: 16) {
+            Image("default-icon")
+                .resizable()
+                .scaledToFit()
             VStack(alignment: .leading){
                 Text(contact.name)
                     .font(.largeTitle)
                 Text(contact.phoneNumber)
                     .font(.largeTitle)
-                    
             }
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            print(contact.name)
+            print(contact.phoneNumber)
         }
     }
 }

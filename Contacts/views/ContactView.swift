@@ -3,17 +3,19 @@ import SwiftUI
 
 struct ContactView: View {
     
-    let contact: Contact
+    @Binding var contact: Contact
     var body: some View {
-        HStack(spacing: 16) {
-            Image("default-icon")
+        HStack(spacing: 20) {
+            Image(contact.imagePath)
                 .resizable()
+                .frame(width: 70, height: 70)
                 .scaledToFit()
             VStack(alignment: .leading){
                 Text(contact.name)
-                    .font(.largeTitle)
-                Text(contact.phoneNumber)
-                    .font(.largeTitle)
+                    .font(.title)
+                Text(contact.phoneNumber.separate(every: 2, from: 0, with: " "))
+                    .font(.title2)
+                    
             }
         }
         .contentShape(Rectangle())
@@ -24,8 +26,14 @@ struct ContactView: View {
     }
 }
 
+extension StringProtocol {
+    func separate(every stride: Int = 4, from start: Int = 0, with separator: Character = " ") -> String {
+        .init(enumerated().flatMap { $0 != 0 && ($0 == start || $0 % stride == start) ? [separator, $1] : [$1]})
+    }
+}
+
 struct ContactView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactView(contact : Contact(name: "Marie Curie", phoneNumber:"06 48 48 19 33" ))
+        ContactView(contact : Binding.constant( Contact(name: "Marie Curie", phoneNumber:"06 48 48 19 33", imagePath: "default-icon")))
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A730A052934B8EA00EA7793 /* ContactsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A730A042934B8EA00EA7793 /* ContactsApp.swift */; };
-		0A730A072934B8EA00EA7793 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A730A062934B8EA00EA7793 /* ContentView.swift */; };
 		0A730A092934B8EB00EA7793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A730A082934B8EB00EA7793 /* Assets.xcassets */; };
 		0A730A0C2934B8EB00EA7793 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A730A0B2934B8EB00EA7793 /* Preview Assets.xcassets */; };
 		0A730A162934B8EB00EA7793 /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A730A152934B8EB00EA7793 /* ContactsTests.swift */; };
@@ -18,6 +17,7 @@
 		0A730A332934BCA900EA7793 /* ContactRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A730A322934BCA900EA7793 /* ContactRepository.swift */; };
 		0A730A362934BD9D00EA7793 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A730A352934BD9D00EA7793 /* ContactView.swift */; };
 		0A730A382934C57E00EA7793 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A730A372934C57E00EA7793 /* ContactListView.swift */; };
+		0A7EB74C2939F0E900ED6AFD /* ContactDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7EB74B2939F0E900ED6AFD /* ContactDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 /* Begin PBXFileReference section */
 		0A730A012934B8EA00EA7793 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A730A042934B8EA00EA7793 /* ContactsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsApp.swift; sourceTree = "<group>"; };
-		0A730A062934B8EA00EA7793 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0A730A082934B8EB00EA7793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A730A0B2934B8EB00EA7793 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A730A112934B8EB00EA7793 /* ContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +51,8 @@
 		0A730A322934BCA900EA7793 /* ContactRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRepository.swift; sourceTree = "<group>"; };
 		0A730A352934BD9D00EA7793 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		0A730A372934C57E00EA7793 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		0A7EB74B2939F0E900ED6AFD /* ContactDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsView.swift; sourceTree = "<group>"; };
+		0A7EB74D293A103400ED6AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +103,11 @@
 		0A730A032934B8EA00EA7793 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				0A7EB74D293A103400ED6AFD /* Info.plist */,
 				0A730A342934BD8D00EA7793 /* views */,
 				0A730A312934BC0E00EA7793 /* repository */,
 				0A730A2E2934BA3D00EA7793 /* data */,
 				0A730A042934B8EA00EA7793 /* ContactsApp.swift */,
-				0A730A062934B8EA00EA7793 /* ContentView.swift */,
 				0A730A082934B8EB00EA7793 /* Assets.xcassets */,
 				0A730A0A2934B8EB00EA7793 /* Preview Content */,
 			);
@@ -159,6 +160,7 @@
 			children = (
 				0A730A352934BD9D00EA7793 /* ContactView.swift */,
 				0A730A372934C57E00EA7793 /* ContactListView.swift */,
+				0A7EB74B2939F0E900ED6AFD /* ContactDetailsView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -294,8 +296,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A730A302934BA8E00EA7793 /* ContactInfo.swift in Sources */,
-				0A730A072934B8EA00EA7793 /* ContentView.swift in Sources */,
 				0A730A332934BCA900EA7793 /* ContactRepository.swift in Sources */,
+				0A7EB74C2939F0E900ED6AFD /* ContactDetailsView.swift in Sources */,
 				0A730A382934C57E00EA7793 /* ContactListView.swift in Sources */,
 				0A730A362934BD9D00EA7793 /* ContactView.swift in Sources */,
 				0A730A052934B8EA00EA7793 /* ContactsApp.swift in Sources */,
@@ -459,6 +461,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Contacts/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Contacts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Permission needed to change photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -487,6 +492,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Contacts/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Contacts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Permission needed to change photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

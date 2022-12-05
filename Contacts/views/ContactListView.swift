@@ -2,18 +2,19 @@ import SwiftUI
 
 
 struct ContactListView : View{
-    let repository = ContactRepository.shared
-    let contacts : [Contact]
+    @StateObject var repository = ContactRepository.shared
+
     
-    init(){
-        self.contacts = repository.contacts
-    }
+
     
     var body: some View{
         List {
-            ForEach(contacts) {contact in
-                ContactView(contact: contact)
-            }
+            ForEach($repository.contacts) {contact in
+                NavigationLink(destination: ContactDetailsView(contact: contact)){
+                    ContactView(contact: contact)
+                }
+            }.navigationTitle("Contacts")
         }
     }
 }
+

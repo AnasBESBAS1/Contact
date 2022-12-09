@@ -4,18 +4,38 @@ import SwiftUI
 struct ContactView: View {
     
     @Binding var contact: Contact
+     var default_image = "default-icon"
+    
     var body: some View {
         HStack(spacing: 20) {
-            Image(contact.imagePath)
-                .resizable()
-                .frame(width: 70, height: 70)
-                .scaledToFit()
+            
+            if let data = contact.imagePath {
+                Image(uiImage : UIImage(data: data)!)
+                    .resizable()
+                    .frame(width: 70, height: 70)
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .overlay(
+                        Circle().stroke(Color.cyan, lineWidth: 4)
+                    )
+                    .shadow(radius: 8)
+            } else{
+                Image(default_image)
+                    .resizable()
+                    .frame(width: 70, height: 70)
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .overlay(
+                        Circle().stroke(Color.cyan, lineWidth: 4)
+                    )
+                    .shadow(radius: 8)
+            }
             VStack(alignment: .leading){
                 Text(contact.name)
                     .font(.title)
                 Text(contact.phoneNumber.separate(every: 2, from: 0, with: " "))
                     .font(.title2)
-                    
+                
             }
         }
         .contentShape(Rectangle())
@@ -34,6 +54,6 @@ extension StringProtocol {
 
 struct ContactView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactView(contact : Binding.constant( Contact(name: "Marie Curie", phoneNumber:"06 48 48 19 33", imagePath: "default-icon")))
+        ContactView(contact : Binding.constant( Contact(name: "Marie Curie", phoneNumber:"06 48 48 19 33")))
     }
 }

@@ -5,26 +5,48 @@ import PhotosUI
 struct ContactDetailsView: View {
     @State private var selectedItem: PhotosPickerItem? = nil
     @Binding var contact : Contact
+    var default_image = "default-icon"
+    
     var body: some View {
-
-        VStack(alignment: .center) {
-            
-            Image(contact.imagePath)
-                
-                .resizable()
-                .frame(width: 150.0, height: 150.0)
-                .clipShape(Circle())
-                .overlay(
-                    Circle().stroke(Color.red, lineWidth: 4)
-                )
-                .shadow(radius: 8)
-                .onTapGesture {
-                   print(contact.name)
+        
+        VStack(alignment: .center, spacing: 12) {
+            PhotosPicker(
+                selection: $selectedItem,
+                matching: .images,
+                photoLibrary: .shared()
+            ){
+                if let data = contact.imagePath {
+                    Image(uiImage: UIImage(data: data)!)
+                        .resizable()
+                        .frame(width: 150.0, height: 150.0)
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle().stroke(Color.cyan, lineWidth: 4)
+                        )
+                        .shadow(radius: 8)
+                } else {
+                    Image(default_image)
+                        .resizable()
+                        .frame(width: 150.0, height: 150.0)
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle().stroke(Color.cyan, lineWidth: 4)
+                        )
+                        .shadow(radius: 8)
                 }
-                HStack{
+                
+            }.onChange(of: selectedItem){ newItem in
+                Task{
+                    if let data = try? await newItem?.loadTransferable(type: Data.self){
+                        contact.imagePath = data
+                    }
+                }
+            }
+            HStack{
+                            
                 Section(header: Text("Name").font(.headline)) { TextField(
                     "Name",
-                
+                    
                     text: $contact.name )
                     
                 }.font(.title).padding(10)
@@ -46,7 +68,7 @@ struct ContactDetailsView: View {
 
 struct ContactDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactDetailsView(contact : .constant(Contact(name: "Marie Curie", phoneNumber:"0648481933", imagePath: "default-icon")))
+        ContactDetailsView(contact : .constant(Contact(name: "Marie Curie", phoneNumber:"0648481933")))
     }
 }
 

@@ -9,7 +9,7 @@ struct ContactDetailsView: View {
     
     var body: some View {
         
-        VStack(alignment: .center, spacing: 12) {
+        VStack(alignment: .center, spacing: 24) {
             PhotosPicker(
                 selection: $selectedItem,
                 matching: .images,
@@ -44,23 +44,21 @@ struct ContactDetailsView: View {
             }
             HStack{
                             
-                Section(header: Text("Name").font(.headline)) { TextField(
+                Section(header: Text("Name :").font(.title)) { TextField(
                     "Name",
-                    
                     text: $contact.name )
                     
-                }.font(.title).padding(10)
+                }.font(.title2).padding(10)
                 
             }
             HStack{
-                Section(header: Text("Number").font(.headline)) {
+                Section(header: Text("Number :").font(.title)) {
                     TextField( "Number",
                                text: $contact.phoneNumber)
                     .keyboardType(.numberPad)
                 }
                 
-            }.font(.title).padding(10)
-            Spacer()
+            }.font(.title2).padding(10)
         }.padding(20).navigationTitle(contact.name)
     }
 }
